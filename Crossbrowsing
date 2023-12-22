@@ -1,0 +1,42 @@
+package Testing;
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+public class Crossbrowsing {
+
+public static void main(String[] args) {
+	// chrome browser 
+	
+	System.setProperty("webriver.chrome.driver", "C:\\Users\\DELL\\Downloads\\chromedriver_win32 (8)\\chromedriver.exe");
+	WebDriver d=new ChromeDriver();
+	d.get("https://www.flipkart.com/");
+	d.manage().window().maximize();
+	d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	// FireFox
+	
+	System.setProperty("webriver.firefox.driver", "C:\\Users\\DELL\\Downloads\\geckodriver-v0.33.0-win64\\geckodriver.exe");
+	 d=new FirefoxDriver();
+	
+	d.get("https://www.flipkart.com/");
+	d.manage().window().maximize();
+	d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	
+	// Edge Browser
+	System.setProperty("webriver.edge.driver", "C:\\Users\\DELL\\Downloads\\edgedriver_win64 (2)\\msedgedriver.exe");
+	 d=new EdgeDriver();
+	
+	d.get("https://www.flipkart.com/");
+	d.manage().window().maximize();
+	d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	
+	
+		
+
+	}
+	
+	
+	
+}
